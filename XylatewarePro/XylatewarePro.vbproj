@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D26A872-CEF3-4847-9650-B4FC685B5127}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>XylatewarePro</RootNamespace>
+    <AssemblyName>XylatewarePro</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>XylatewarePro.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>XylatewarePro.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>image-_11_.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AngleSharp">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CliWrap">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\CliWrap.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.Base">
+      <HintPath>E:\Projects\Netflix\Netflix\bin\Release\EO.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.WebBrowser">
+      <HintPath>E:\Projects\Netflix\Netflix\bin\Release\EO.WebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.WebEngine">
+      <HintPath>E:\Projects\Netflix\Netflix\bin\Release\EO.WebEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\Libs\UI\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="LibVLCSharp">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\LibVLCSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LibVLCSharp.WinForms">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\LibVLCSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Linq.Async">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Linq.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>E:\Projects\XylatewarePro\XylatewarePro\bin\Debug\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xylon.PH">
+      <HintPath>..\..\DIH\DIH_Pro_Remix\bin\Debug\Xylon.PH.dll</HintPath>
+    </Reference>
+    <Reference Include="YoutubeExplode">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\YoutubeExplode.dll</HintPath>
+    </Reference>
+    <Reference Include="YoutubeExplode.Converter">
+      <HintPath>..\..\..\..\..\source\repos\WindowsApp1\WindowsApp1\bin\Debug\YoutubeExplode.Converter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AppNotify.Designer.vb">
+      <DependentUpon>AppNotify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AppNotify.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Custom\FileBrowserDialog.vb" />
+    <Compile Include="Controls\Custom\LogInTheme.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FlickerFix\IBufferedControl.vb" />
+    <Compile Include="Controls\FlickerFix\PanelFX.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FlickerFix\Win32FX.vb" />
+    <Compile Include="Controls\PreviewCon.Designer.vb">
+      <DependentUpon>PreviewCon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PreviewCon.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PreviewWallpaper.Designer.vb">
+      <DependentUpon>PreviewWallpaper.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PreviewWallpaper.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WallPaperPreview.Designer.vb">
+      <DependentUpon>WallPaperPreview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WallPaperPreview.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Core\Engine\Desktop.vb" />
+    <Compile Include="Core\Engine\DesktopEmbeddedWindowHelper.vb" />
+    <Compile Include="Core\Engine\DesktopEmbeder.vb" />
+    <Compile Include="Core\Engine\Gif\GIF.vb" />
+    <Compile Include="Core\Engine\Gif\GifPlayer.vb" />
+    <Compile Include="Core\Engine\TaskbarStyle.vb" />
+    <Compile Include="Core\Engine\W32.vb" />
+    <Compile Include="Core\Engine\Wallpaper.vb" />
+    <Compile Include="Core\Engine\WinAPIHelper.vb" />
+    <Compile Include="Core\FakeFullScreen\SetWindowState.vb" />
+    <Compile Include="Core\FakeFullScreen\SetWindowStyle.vb" />
+    <Compile Include="Core\FastArgumentParser.vb" />
+    <Compile Include="Core\Helpers\BlurEffect.vb" />
+    <Compile Include="Core\Helpers\FileAssociations.vb" />
+    <Compile Include="Core\Helpers\HelperIcon.vb" />
+    <Compile Include="Core\Manage\Exception.vb" />
+    <Compile Include="Core\Manage\JavaScripts.vb" />
+    <Compile Include="Core\Manage\SettingsLoader.vb" />
+    <Compile Include="Core\Model\ExceptionModel.vb" />
+    <Compile Include="Core\Model\FunctionCollection.vb" />
+    <Compile Include="Core\Model\Startup.vb" />
+    <Compile Include="Core\Wallpaper\WallHaven.vb" />
+    <Compile Include="Core\Engine\WallpaperJsonLoader.vb" />
+    <Compile Include="Core\Helpers\FileDirSearcher.vb" />
+    <Compile Include="Core\Helpers\Utils.vb" />
+    <Compile Include="Core\Manage\ControlLister.vb" />
+    <Compile Include="Core\Manage\Instances.vb" />
+    <Compile Include="Core\Manage\PagedList.vb" />
+    <Compile Include="Core\Manage\Paths.vb" />
+    <Compile Include="Core\Manage\RGBManager.vb" />
+    <Compile Include="Core\Manage\ScrollManager.vb" />
+    <Compile Include="Core\ZipCore.vb" />
+    <Compile Include="Forms\About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrashDialog.Designer.vb">
+      <DependentUpon>CrashDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CrashDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Engine\EdgeForm.Designer.vb">
+      <DependentUpon>EdgeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Engine\EdgeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Engine\GifEngine.Designer.vb">
+      <DependentUpon>GifEngine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Engine\GifEngine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Engine\VideoForm.Designer.vb">
+      <DependentUpon>VideoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Engine\VideoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Engine\WebForms.Designer.vb">
+      <DependentUpon>WebForms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Engine\WebForms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Engine\WPFVideoEngine.Designer.vb">
+      <DependentUpon>WPFVideoEngine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Engine\WPFVideoEngine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Engine\YoutubePlayer.Designer.vb">
+      <DependentUpon>YoutubePlayer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Engine\YoutubePlayer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SysAnimationError.Designer.vb">
+      <DependentUpon>SysAnimationError.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SysAnimationError.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WallConfig.Designer.vb">
+      <DependentUpon>WallConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WallConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PakageInstaller.Designer.vb">
+      <DependentUpon>PakageInstaller.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PakageInstaller.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashForm.Designer.vb">
+      <DependentUpon>SplashForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Studio.Designer.vb">
+      <DependentUpon>Studio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Studio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Youtube.Designer.vb">
+      <DependentUpon>Youtube.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Youtube.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Store.Designer.vb">
+      <DependentUpon>Store.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Store.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dashboard.Designer.vb">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainUI.Designer.vb">
+      <DependentUpon>MainUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Program.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\AppNotify.resx">
+      <DependentUpon>AppNotify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PreviewCon.resx">
+      <DependentUpon>PreviewCon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PreviewWallpaper.resx">
+      <DependentUpon>PreviewWallpaper.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WallPaperPreview.resx">
+      <DependentUpon>WallPaperPreview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrashDialog.resx">
+      <DependentUpon>CrashDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Engine\EdgeForm.resx">
+      <DependentUpon>EdgeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Engine\GifEngine.resx">
+      <DependentUpon>GifEngine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Engine\VideoForm.resx">
+      <DependentUpon>VideoForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Engine\WebForms.resx">
+      <DependentUpon>WebForms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Engine\WPFVideoEngine.resx">
+      <DependentUpon>WPFVideoEngine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Engine\YoutubePlayer.resx">
+      <DependentUpon>YoutubePlayer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SysAnimationError.resx">
+      <DependentUpon>SysAnimationError.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WallConfig.resx">
+      <DependentUpon>WallConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PakageInstaller.resx">
+      <DependentUpon>PakageInstaller.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashForm.resx">
+      <DependentUpon>SplashForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Studio.resx">
+      <DependentUpon>Studio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Youtube.resx">
+      <DependentUpon>Youtube.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Store.resx">
+      <DependentUpon>Store.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dashboard.resx">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainUI.resx">
+      <DependentUpon>MainUI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="image-_11_.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
