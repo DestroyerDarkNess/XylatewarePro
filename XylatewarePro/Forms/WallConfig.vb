@@ -87,6 +87,7 @@ Public Class WallConfig
     End Sub
 
     Private Sub PakageInstaller_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Core.Engine.DesktopEmbeder.RefreshDesktop()
         LoadData()
         IsGuiLoaded = True
     End Sub
@@ -133,6 +134,12 @@ Public Class WallConfig
 
                     Me.Label1.Text = "Engine : VLC"
 
+                ElseIf TypeOf Me.EmbedControl Is YoutubePlayervlc Then
+
+                    Me.Label1.Text = "Engine : Youtube VLC"
+                    Label5.Visible = True
+                    Guna2TrackBar1.Visible = True
+
                 ElseIf TypeOf Me.EmbedControl Is WPFVideoEngine Then
 
                     Me.Label1.Text = "Engine : WPF.Video"
@@ -167,9 +174,10 @@ Public Class WallConfig
                 Dim PreviewPath As String = IO.Path.Combine(ManifestData.MainFolder, ManifestData.ManifestJson.Thumbnail)
 
                 Dim Preview As Bitmap = GetImageFromMemory(PreviewPath)
-
+                Dim IconEx As Icon = Preview.ToIcon(True, Color.Black)
                 Me.Guna2Panel2.BackgroundImage = Preview
-                Me.NotifyIcon1.Icon = Preview.ToIcon(True, Color.Black)
+                Me.NotifyIcon1.Icon = IconEx
+                Me.Icon = IconEx
             Else
                 Try
                     Dim ImageUrl As String = "http://img.youtube.com/vi/" & YoutubeID & "/0.jpg"
@@ -177,8 +185,10 @@ Public Class WallConfig
                     Dim PaicTemp As New PictureBox
                     PaicTemp.Load(ImageUrl)
                     Dim ImageEx As Bitmap = PaicTemp.Image
+                    Dim IconEx As Icon = ImageEx.ToIcon(True, Color.Black)
                     Me.Guna2Panel2.BackgroundImage = ImageEx
-                    Me.NotifyIcon1.Icon = ImageEx.ToIcon(True, Color.Black)
+                    Me.NotifyIcon1.Icon = IconEx
+                    Me.Icon = IconEx
                 Catch ex As Exception
 
                 End Try
@@ -265,12 +275,19 @@ Public Class WallConfig
                         DirectCast(Me.EmbedControl, VideoForm).MediaPlayer1.Pause()
                     End If
 
+                ElseIf TypeOf Me.EmbedControl Is YoutubePlayerVLC Then
+
+                    If State = False Then
+                        DirectCast(Me.EmbedControl, YoutubePlayerVLC).MediaPlayer1.Play()
+                    Else
+                        DirectCast(Me.EmbedControl, YoutubePlayerVLC).MediaPlayer1.Pause()
+                    End If
 
                 ElseIf TypeOf Me.EmbedControl Is WPFVideoEngine Then
 
                     If State = False Then
                         DirectCast(Me.EmbedControl, WPFVideoEngine).MediaPlayer.Play()
-                        Debug.WriteLine("played")
+                        ' Debug.WriteLine("played")
                     Else
                         DirectCast(Me.EmbedControl, WPFVideoEngine).MediaPlayer.Pause()
                     End If
@@ -344,6 +361,10 @@ Public Class WallConfig
         If TypeOf Me.EmbedControl Is VideoForm Then
 
             DirectCast(Me.EmbedControl, VideoForm).MediaPlayer1.Volume = Vol
+
+        ElseIf TypeOf Me.EmbedControl Is YoutubePlayerVLC Then
+
+            DirectCast(Me.EmbedControl, YoutubePlayerVLC).MediaPlayer1.Volume = Vol
 
         ElseIf TypeOf Me.EmbedControl Is WPFVideoEngine Then
 

@@ -92,3 +92,4 @@ C:\Users\Administrator\Documents\Visual Studio 2015\Projects\XylatewarePro\Xylat
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\XylatewarePro\XylatewarePro\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\XylatewarePro\XylatewarePro\obj\Debug\XylatewarePro.vbproj.ResolveComReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\XylatewarePro\XylatewarePro\obj\Debug\XylatewarePro.SysAnimationError.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\XylatewarePro\XylatewarePro\obj\Debug\XylatewarePro.YoutubePlayerVLC.resources

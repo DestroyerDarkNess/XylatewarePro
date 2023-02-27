@@ -38,6 +38,7 @@ Public Class YoutubePlayer
     Public Shared Sub Application_Exception_Handler(ByVal sender As Object, ByVal e As System.Threading.ThreadExceptionEventArgs)
         Dim ex As Exception = CType(e.Exception, Exception)
         Dim ExDialog As New CrashDialog
+        ExDialog.Text += "  : Youtube Player"
         ExDialog.ErrorMessage = ex
         ExDialog.ShowDialog()
     End Sub
@@ -48,13 +49,13 @@ Public Class YoutubePlayer
         Me.Size = ScreenSize
         Me.Location = New System.Drawing.Point(0, 0)
         Play(Url)
+        If Not Core.Helpers.Utils.ReadIni("Settings", "YoutubeBars", 0) = 1 Then
+            Me.TransparencyKey = Nothing
+        End If
     End Sub
 
     Private Sub YoutubePlayer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AxWindowsMediaPlayer1.uiMode = "none"
-        If Core.Helpers.Utils.ReadIni("Settings", "YoutubeBars", 0) = 1 Then
-            Me.TransparencyKey = Color.Black
-        End If
     End Sub
 
 

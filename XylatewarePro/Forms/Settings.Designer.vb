@@ -24,6 +24,11 @@ Partial Class Settings
     Private Sub InitializeComponent()
         Me.Guna2HtmlToolTip1 = New Guna.UI2.WinForms.Guna2HtmlToolTip()
         Me.PanelFX1 = New XylatewarePro.PanelFX()
+        Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2ComboBox6 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2ComboBox5 = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -60,12 +65,12 @@ Partial Class Settings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2ComboBox6 = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2ComboBox7 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.PanelFX1.SuspendLayout()
+        Me.Guna2Panel10.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
         Me.Guna2Panel6.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
@@ -74,7 +79,7 @@ Partial Class Settings
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
-        Me.Guna2Panel10.SuspendLayout()
+        Me.Guna2Panel11.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2HtmlToolTip1
@@ -89,6 +94,7 @@ Partial Class Settings
         'PanelFX1
         '
         Me.PanelFX1.AutoScroll = True
+        Me.PanelFX1.Controls.Add(Me.Guna2Panel11)
         Me.PanelFX1.Controls.Add(Me.Guna2Panel10)
         Me.PanelFX1.Controls.Add(Me.Label26)
         Me.PanelFX1.Controls.Add(Me.Guna2Panel9)
@@ -109,6 +115,71 @@ Partial Class Settings
         Me.PanelFX1.PreventFlickering = True
         Me.PanelFX1.Size = New System.Drawing.Size(815, 885)
         Me.PanelFX1.TabIndex = 6
+        '
+        'Guna2Panel10
+        '
+        Me.Guna2Panel10.BorderRadius = 5
+        Me.Guna2Panel10.Controls.Add(Me.Guna2ComboBox6)
+        Me.Guna2Panel10.Controls.Add(Me.Label20)
+        Me.Guna2Panel10.Controls.Add(Me.Label21)
+        Me.Guna2Panel10.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Guna2Panel10.Location = New System.Drawing.Point(17, 771)
+        Me.Guna2Panel10.Name = "Guna2Panel10"
+        Me.Guna2Panel10.Size = New System.Drawing.Size(772, 58)
+        Me.Guna2Panel10.TabIndex = 18
+        '
+        'Guna2ComboBox6
+        '
+        Me.Guna2ComboBox6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ComboBox6.BorderColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Guna2ComboBox6.BorderRadius = 10
+        Me.Guna2ComboBox6.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.Guna2ComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Guna2ComboBox6.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.Guna2ComboBox6.FocusedColor = System.Drawing.Color.DeepSkyBlue
+        Me.Guna2ComboBox6.FocusedState.BorderColor = System.Drawing.Color.DeepSkyBlue
+        Me.Guna2ComboBox6.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.Guna2ComboBox6.ForeColor = System.Drawing.Color.White
+        Me.Guna2ComboBox6.ItemHeight = 30
+        Me.Guna2ComboBox6.Items.AddRange(New Object() {"Black", "Transparent"})
+        Me.Guna2ComboBox6.Location = New System.Drawing.Point(608, 13)
+        Me.Guna2ComboBox6.Name = "Guna2ComboBox6"
+        Me.Guna2ComboBox6.Size = New System.Drawing.Size(154, 36)
+        Me.Guna2ComboBox6.StartIndex = 0
+        Me.Guna2ComboBox6.TabIndex = 17
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI", 7.0!)
+        Me.Label20.ForeColor = System.Drawing.Color.Silver
+        Me.Label20.Location = New System.Drawing.Point(17, 30)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(306, 12)
+        Me.Label20.TabIndex = 7
+        Me.Label20.Text = "Change the black bars of the youtube player, for a better experience."
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.BackColor = System.Drawing.Color.Transparent
+        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(16, 13)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(80, 17)
+        Me.Label21.TabIndex = 3
+        Me.Label21.Text = "Header Bars"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(12, 674)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(81, 25)
+        Me.Label26.TabIndex = 15
+        Me.Label26.Text = "Youtube"
         '
         'Guna2Panel9
         '
@@ -582,70 +653,62 @@ Partial Class Settings
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Taskbar"
         '
-        'Guna2Panel10
+        'Guna2Panel11
         '
-        Me.Guna2Panel10.BorderRadius = 5
-        Me.Guna2Panel10.Controls.Add(Me.Guna2ComboBox6)
-        Me.Guna2Panel10.Controls.Add(Me.Label20)
-        Me.Guna2Panel10.Controls.Add(Me.Label21)
-        Me.Guna2Panel10.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Guna2Panel10.Location = New System.Drawing.Point(17, 715)
-        Me.Guna2Panel10.Name = "Guna2Panel10"
-        Me.Guna2Panel10.Size = New System.Drawing.Size(772, 58)
-        Me.Guna2Panel10.TabIndex = 18
+        Me.Guna2Panel11.BorderRadius = 5
+        Me.Guna2Panel11.Controls.Add(Me.Guna2ComboBox7)
+        Me.Guna2Panel11.Controls.Add(Me.Label22)
+        Me.Guna2Panel11.Controls.Add(Me.Label23)
+        Me.Guna2Panel11.FillColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Guna2Panel11.Location = New System.Drawing.Point(17, 707)
+        Me.Guna2Panel11.Name = "Guna2Panel11"
+        Me.Guna2Panel11.Size = New System.Drawing.Size(772, 58)
+        Me.Guna2Panel11.TabIndex = 19
         '
-        'Guna2ComboBox6
+        'Guna2ComboBox7
         '
-        Me.Guna2ComboBox6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ComboBox6.BorderColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(43, Byte), Integer))
-        Me.Guna2ComboBox6.BorderRadius = 10
-        Me.Guna2ComboBox6.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.Guna2ComboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Guna2ComboBox6.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.Guna2ComboBox6.FocusedColor = System.Drawing.Color.DeepSkyBlue
-        Me.Guna2ComboBox6.FocusedState.BorderColor = System.Drawing.Color.DeepSkyBlue
-        Me.Guna2ComboBox6.Font = New System.Drawing.Font("Segoe UI", 8.0!)
-        Me.Guna2ComboBox6.ForeColor = System.Drawing.Color.White
-        Me.Guna2ComboBox6.ItemHeight = 30
-        Me.Guna2ComboBox6.Items.AddRange(New Object() {"Black", "Transparent"})
-        Me.Guna2ComboBox6.Location = New System.Drawing.Point(608, 13)
-        Me.Guna2ComboBox6.Name = "Guna2ComboBox6"
-        Me.Guna2ComboBox6.Size = New System.Drawing.Size(154, 36)
-        Me.Guna2ComboBox6.StartIndex = 0
-        Me.Guna2ComboBox6.TabIndex = 17
+        Me.Guna2ComboBox7.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ComboBox7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(39, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Guna2ComboBox7.BorderRadius = 10
+        Me.Guna2ComboBox7.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.Guna2ComboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Guna2ComboBox7.FillColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.Guna2ComboBox7.FocusedColor = System.Drawing.Color.DeepSkyBlue
+        Me.Guna2ComboBox7.FocusedState.BorderColor = System.Drawing.Color.DeepSkyBlue
+        Me.Guna2ComboBox7.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.Guna2ComboBox7.ForeColor = System.Drawing.Color.White
+        Me.Guna2ComboBox7.ItemHeight = 30
+        Me.Guna2ComboBox7.Items.AddRange(New Object() {"WMP", "LibVLCSharp"})
+        Me.Guna2ComboBox7.Location = New System.Drawing.Point(608, 13)
+        Me.Guna2ComboBox7.Name = "Guna2ComboBox7"
+        Me.Guna2ComboBox7.Size = New System.Drawing.Size(154, 36)
+        Me.Guna2ComboBox7.StartIndex = 0
+        Me.Guna2ComboBox7.TabIndex = 17
         '
-        'Label20
+        'Label22
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.BackColor = System.Drawing.Color.Transparent
-        Me.Label20.Font = New System.Drawing.Font("Segoe UI", 7.0!)
-        Me.Label20.ForeColor = System.Drawing.Color.Silver
-        Me.Label20.Location = New System.Drawing.Point(17, 30)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(306, 12)
-        Me.Label20.TabIndex = 7
-        Me.Label20.Text = "Change the black bars of the youtube player, for a better experience."
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Font = New System.Drawing.Font("Segoe UI", 7.0!)
+        Me.Label22.ForeColor = System.Drawing.Color.Silver
+        Me.Label22.Location = New System.Drawing.Point(17, 30)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(511, 24)
+        Me.Label22.TabIndex = 7
+        Me.Label22.Text = "Player Engine. WMP (Maintains the Aspect Ratio of the Video, having black borders" &
+    " depending on your monitor) or" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "LibVLCSharp (Stretches the video completely with" &
+    " respect to your monitor)"
         '
-        'Label21
+        'Label23
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.BackColor = System.Drawing.Color.Transparent
-        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(16, 13)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(80, 17)
-        Me.Label21.TabIndex = 3
-        Me.Label21.Text = "Header Bars"
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(12, 674)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(81, 25)
-        Me.Label26.TabIndex = 15
-        Me.Label26.Text = "Youtube"
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.Transparent
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(16, 13)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(47, 17)
+        Me.Label23.TabIndex = 3
+        Me.Label23.Text = "Engine"
         '
         'Settings
         '
@@ -661,6 +724,8 @@ Partial Class Settings
         Me.Text = "Dashboard"
         Me.PanelFX1.ResumeLayout(False)
         Me.PanelFX1.PerformLayout()
+        Me.Guna2Panel10.ResumeLayout(False)
+        Me.Guna2Panel10.PerformLayout()
         Me.Guna2Panel9.ResumeLayout(False)
         Me.Guna2Panel9.PerformLayout()
         Me.Guna2Panel6.ResumeLayout(False)
@@ -677,8 +742,8 @@ Partial Class Settings
         Me.Guna2Panel3.PerformLayout()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
-        Me.Guna2Panel10.ResumeLayout(False)
-        Me.Guna2Panel10.PerformLayout()
+        Me.Guna2Panel11.ResumeLayout(False)
+        Me.Guna2Panel11.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -725,4 +790,8 @@ Partial Class Settings
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents Label26 As Label
+    Friend WithEvents Guna2Panel11 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2ComboBox7 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
 End Class

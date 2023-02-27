@@ -85,9 +85,7 @@ IL_9C:
                                     End Sub)
 
 
-                     Me.BeginInvoke(Sub()
-                                        Core.Manage.Remix_Injector.Start()
-                                    End Sub)
+                     '  Await Core.Manage.Remix_Injector.Start()
 
                      Dim close As InvokeMethod = Sub()
                                                      Me.Close()

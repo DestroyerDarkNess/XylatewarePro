@@ -51,6 +51,7 @@
     Public Shared Sub Application_Exception_Handler(ByVal sender As Object, ByVal e As System.Threading.ThreadExceptionEventArgs)
         Dim ex As Exception = CType(e.Exception, Exception)
         Dim ExDialog As New CrashDialog
+        ExDialog.Text += "  : GIF Player"
         ExDialog.ErrorMessage = ex
         ExDialog.ShowDialog()
         Application.Exit()

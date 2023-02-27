@@ -1,22 +1,8 @@
 ﻿Imports System.Threading
 Imports LibVLCSharp.[Shared]
 
-Public Class VideoForm
+Public Class YoutubePlayerVLC
 
-#Region " Properties "
-
-    Private WallpaperEx As Core.Engine.WallpaperJsonLoader.WallpaperInfo = Nothing
-    Public Property Wallpaper As Core.Engine.WallpaperJsonLoader.WallpaperInfo
-        <DebuggerStepThrough>
-        Get
-            Return Me.WallpaperEx
-        End Get
-        Set(value As Core.Engine.WallpaperJsonLoader.WallpaperInfo)
-            WallpaperEx = value
-        End Set
-    End Property
-
-#End Region
 
 #Region " Declare "
 
@@ -28,22 +14,24 @@ Public Class VideoForm
 
     Private MediaUrl As String = String.Empty
     Dim ScreenSize As System.Drawing.Size = New System.Drawing.Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height)
-
 #End Region
+
 
 #Region " Constructor "
 
     Public Sub New(Optional ByVal MediaUrlEx As String = "")
-        Try : AddHandler Application.ThreadException, AddressOf Application_Exception_Handler
-            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException, False)
+        Try : AddHandler System.Windows.Forms.Application.ThreadException, AddressOf Application_Exception_Handler
+            System.Windows.Forms.Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException, False)
         Catch : End Try
         MediaUrl = MediaUrlEx
 
         LibVLCSharp.Shared.Core.Initialize()
         LibVLC1 = New LibVLCSharp.Shared.LibVLC(LibOptions)
+
         MediaPlayer1 = New LibVLCSharp.Shared.MediaPlayer(LibVLC1)
-        '  MediaPlayer1.AspectRatio = My.Computer.Screen.WorkingArea.Width & ":" & My.Computer.Screen.WorkingArea.Height + 50
-        '   MediaPlayer1.Scale = 0
+        '    MediaPlayer1.AspectRatio = My.Computer.Screen.WorkingArea.Width & ":" & My.Computer.Screen.WorkingArea.Height '+ 50
+        '    MediaPlayer1.Scale = 0
+
         ' This call is required by the designer.
         InitializeComponent()
 
@@ -72,22 +60,12 @@ Public Class VideoForm
             Me.Hide()
             VideoView1.MediaPlayer = MediaPlayer1
 
-            '   Dim IsPlayMute As Boolean = Not CBool(Core.Helpers.Utils.ReadIni("Settings", "MediaSound", False))
+            '  Dim IsPlayMute As Boolean = Not CBool(Core.Helpers.Utils.ReadIni("Settings", "MediaSound", False))
 
             '   VideoView1.MediaPlayer.Mute = IsPlayMute
 
-            Dim FilePath As String = String.Empty
-            If Not MediaUrl = String.Empty Then
-                FilePath = MediaUrl
-            Else
-                FilePath = IO.Path.Combine(Wallpaper.MainFolder, Wallpaper.ManifestJson.FileName)
-            End If
+            Play(MediaUrl)
 
-            If IO.File.Exists(FilePath) = True Then
-                Play(FilePath)
-            Else
-                Throw New Exception("File no Found")
-            End If
         Catch ex As Exception
             Me.Hide()
             Core.Engine.DesktopEmbeder.RefreshDesktop()
@@ -128,7 +106,9 @@ Public Class VideoForm
     Public Sub Play(ByVal Url As String)
         LibVLCMedia = New Media(LibVLC1, New Uri(Url))
         MediaPlayer1.Play(LibVLCMedia)
+
         PlayerFullScreen()
+
         Me.Show()
         Me.Opacity = 0.1 + 100 / 100
     End Sub
@@ -143,7 +123,6 @@ Public Class VideoForm
     End Sub
 
 #End Region
-
     Dim _isFullScreen As Boolean = False
     ' //https://stackoverflow.com/questions/57373566/how-to-remove-video-black-bands-in-videoview-with-libvlcsharp
     Public Sub PlayerFullScreen()

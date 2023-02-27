@@ -9,26 +9,23 @@ Namespace Core.Manage
 
     Public NotInheritable Class Remix_Injector
 
-        Public Shared Async Sub Start()
-            Try
+        'Public Shared Async Function Start() As Task(Of Boolean)
+        '    Try
 
-                Core.Manage.Instances.MainUI = New MainUI
-                'Core.Manage.Instances.MainInstance.AllApplicationControls = Core.Helpers.Utils.GetAllWithOutType(Core.Manage.Instances.MainInstance)
+        '        Core.Manage.Instances.MainUI = New MainUI
 
-                'Core.Manage.DllsManager.RemoveDuplicates()
-                'Application.Run(Core.Manage.Instances.MainInstance)
+        '        Return Await Core.Manage.Instances.MainUI.GUI
 
-                Await Core.Manage.Instances.MainUI.GUI
+        '    Catch ex As System.Exception
+        '        Dim NewExcep As New Core.Model.ExceptionModel
+        '        NewExcep.Ident = "Remix_Injector".ToUpper & "." & ex.Source
+        '        NewExcep.Message = ex.Message
+        '        NewExcep.Stack = ex.StackTrace
 
-            Catch ex As System.Exception
-                Dim NewExcep As New Core.Model.ExceptionModel
-                NewExcep.Ident = "Remix_Injector".ToUpper & "." & ex.Source
-                NewExcep.Message = ex.Message
-                NewExcep.Stack = ex.StackTrace
-
-                Core.Manage.Exception.WriteException(NewExcep)
-            End Try
-        End Sub
+        '        Core.Manage.Exception.WriteException(NewExcep)
+        '        Return False
+        '    End Try
+        'End Function
 
 
     End Class

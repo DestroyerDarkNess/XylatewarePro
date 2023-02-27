@@ -37,6 +37,7 @@
             Dim TaskStyle As Integer = Core.Helpers.Utils.ReadIni("Settings", "TaskbarStyle", 0)
             TaskbarX.TaskbarStyle.TaskbarStyler(TaskStyle)
             Guna2ComboBox1.SelectedIndex = TaskStyle
+            Guna2ComboBox7.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "YoutubePlayer", 0)
             Guna2ComboBox6.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "YoutubeBars", 0)
             Guna2ComboBox5.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "SysEmbed", 0)
             Guna2ComboBox4.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "GifEngine", 0)
@@ -50,13 +51,18 @@
         GuiLoaded = True
     End Sub
 
+    Public Sub LoadSettingsNoUI()
+        Dim TaskStyle As Integer = Core.Helpers.Utils.ReadIni("Settings", "TaskbarStyle", 0)
+        TaskbarX.TaskbarStyle.TaskbarStyler(TaskStyle)
+    End Sub
+
     Private Sub Reset()
         Core.Helpers.Utils.WriteIni("Settings", "YoutubeBars", 0)
         Core.Helpers.Utils.WriteIni("Settings", "SysEmbed", 0)
         Core.Helpers.Utils.WriteIni("Settings", "GifEngine", 0)
         Core.Helpers.Utils.WriteIni("Settings", "VideoEngine", 0)
         Core.Helpers.Utils.WriteIni("Settings", "WebEngine", 0)
-
+        Guna2ComboBox7.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "YoutubePlayer", 0)
         Guna2ComboBox6.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "YoutubeBars", 0)
         Guna2ComboBox5.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "SysEmbed", 0)
         Guna2ComboBox4.SelectedIndex = Core.Helpers.Utils.ReadIni("Settings", "GifEngine", 0)
@@ -114,4 +120,11 @@
             Core.Helpers.Utils.WriteIni("Settings", "YoutubeBars", Guna2ComboBox6.SelectedIndex)
         End If
     End Sub
+
+    Private Sub Guna2ComboBox7_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Guna2ComboBox7.SelectedIndexChanged
+        If GuiLoaded = True Then
+            Core.Helpers.Utils.WriteIni("Settings", "YoutubePlayer", Guna2ComboBox7.SelectedIndex)
+        End If
+    End Sub
+
 End Class

@@ -41,7 +41,9 @@ Partial Class SysAnimationError
         Me.Guna2DragControl4 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.Guna2DragControl5 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -81,6 +83,7 @@ Partial Class SysAnimationError
         '
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Location = New System.Drawing.Point(16, 235)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(457, 365)
@@ -228,6 +231,20 @@ Partial Class SysAnimationError
         Me.Guna2DragControl5.TargetControl = Me.Guna2Separator1
         Me.Guna2DragControl5.UseTransparentDrag = True
         '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.White
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.0!)
+        Me.Label5.ForeColor = System.Drawing.Color.Red
+        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Label5.Location = New System.Drawing.Point(0, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(457, 14)
+        Me.Label5.TabIndex = 38
+        Me.Label5.Text = "Enable -> 'Animate Controls and elements inside windows'"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'SysAnimationError
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,6 +262,7 @@ Partial Class SysAnimationError
         Me.Text = "PakageInstaller"
         Me.TopMost = True
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -266,4 +284,5 @@ Partial Class SysAnimationError
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label5 As Label
 End Class

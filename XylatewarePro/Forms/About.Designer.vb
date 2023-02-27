@@ -73,7 +73,7 @@ Partial Class About
         Me.Guna2Button4.ShadowDecoration.Color = System.Drawing.Color.DeepSkyBlue
         Me.Guna2Button4.Size = New System.Drawing.Size(31, 31)
         Me.Guna2Button4.TabIndex = 9
-        Me.Guna2HtmlToolTip1.SetToolTip(Me.Guna2Button4, "Search")
+        Me.Guna2HtmlToolTip1.SetToolTip(Me.Guna2Button4, "Copy Adress")
         Me.Guna2Button4.UseTransparentBackground = True
         '
         'PanelFX1

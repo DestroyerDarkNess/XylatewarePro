@@ -11,10 +11,48 @@ NotInheritable Class Program
 
     Public Shared SplashFormEx As SplashForm = Nothing
 
+    Public Shared Sub FirstChanceExceptionHandler(sender As Object, e As System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs)
+        Dim ex As Exception = CType(e.Exception, Exception)
+        Dim NewExcep As New Core.Model.ExceptionModel
+        NewExcep.Ident = ex.Source
+        NewExcep.Message = ex.Message
+        NewExcep.Stack = ex.StackTrace
+
+        Core.Manage.Exception.WriteException(NewExcep)
+    End Sub
+
+    Public Shared Sub CurrentDomain_UnhandledException(sender As Object, e As System.UnhandledExceptionEventArgs)
+        Dim ex As Exception = CType(e.ExceptionObject, Exception)
+        Dim NewExcep As New Core.Model.ExceptionModel
+        NewExcep.Ident = ex.Source
+        NewExcep.Message = ex.Message
+        NewExcep.Stack = ex.StackTrace
+
+        Core.Manage.Exception.WriteException(NewExcep)
+    End Sub
+
+    Private Shared Sub Application_Exception_Handler(ByVal sender As Object, ByVal e As System.Threading.ThreadExceptionEventArgs)
+        Dim ex As Exception = CType(e.Exception, Exception)
+        Dim NewExcep As New Core.Model.ExceptionModel
+        NewExcep.Ident = ex.Source
+        NewExcep.Message = ex.Message
+        NewExcep.Stack = ex.StackTrace
+
+        Core.Manage.Exception.WriteException(NewExcep)
+    End Sub
+
 
     <STAThread>
     Friend Shared Sub Main()
+
         Core.Manage.Paths.CreateCache()
+
+        AddHandler AppDomain.CurrentDomain.FirstChanceException, AddressOf FirstChanceExceptionHandler
+        AddHandler AppDomain.CurrentDomain.UnhandledException, AddressOf CurrentDomain_UnhandledException
+
+        Try : AddHandler Application.ThreadException, AddressOf Application_Exception_Handler
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException, False)
+        Catch : End Try
 
         Dim ReOpenIsAdmin As Boolean = False
 
@@ -74,7 +112,17 @@ NotInheritable Class Program
             Try
                 Dim wallConfig As WallConfig = New WallConfig() With {.YoutubeID = YoutubeEmbed.Value.FirstOrDefault}
 
-                Dim VideoEngine As New YoutubePlayer With {.Url = YoutubeEmbed.Value.LastOrDefault}
+                Dim VideoEngine As Control = Nothing
+
+
+                Select Case Core.Helpers.Utils.ReadIni("Settings", "YoutubePlayer", 0)
+                    Case 0
+                        VideoEngine = New YoutubePlayer With {.Url = YoutubeEmbed.Value.LastOrDefault}
+                    Case 1
+                        VideoEngine = New YoutubePlayerVLC(YoutubeEmbed.Value.LastOrDefault)
+                    Case Else
+                        VideoEngine = New YoutubePlayer With {.Url = YoutubeEmbed.Value.LastOrDefault}
+                End Select
 
                 If SysEmbed = 0 Then
                     DeskEmbeder.EmbedControl(VideoEngine, True)
@@ -88,7 +136,6 @@ NotInheritable Class Program
                 Environment.Exit(0)
 
             Catch ex As Exception
-
                 If ex.Message.Contains("SHELLDLL_DefView") Then
                     Dim SysError As New SysAnimationError
                     SysError.ShowDialog()
@@ -112,6 +159,7 @@ NotInheritable Class Program
             Application.Run(SplashFormEx)
 
             Core.Manage.Instances.SilentMode = SilentA.Detected
+            Core.Manage.Instances.MainUI = New MainUI
 
             Application.Run(Core.Manage.Instances.MainUI)
         End If

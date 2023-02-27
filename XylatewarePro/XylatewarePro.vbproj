@@ -284,6 +284,12 @@
     <Compile Include="Forms\Engine\WPFVideoEngine.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Engine\YoutubePlayerVLC.Designer.vb">
+      <DependentUpon>YoutubePlayerVLC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Engine\YoutubePlayerVLC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Engine\YoutubePlayer.Designer.vb">
       <DependentUpon>YoutubePlayer.vb</DependentUpon>
     </Compile>
@@ -400,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Engine\WPFVideoEngine.resx">
       <DependentUpon>WPFVideoEngine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Engine\YoutubePlayerVLC.resx">
+      <DependentUpon>YoutubePlayerVLC.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Engine\YoutubePlayer.resx">
       <DependentUpon>YoutubePlayer.vb</DependentUpon>

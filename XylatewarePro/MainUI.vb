@@ -40,11 +40,12 @@ Public Class MainUI
         '  If ModernMessage.Show = DialogResult.OK Then
 
         '  End If
+        GUI()
     End Sub
 
 #Region " UI "
 
-    Public Async Function GUI() As Task(Of Boolean)
+    Public Function GUI()
         ' UIScrool = New Core.Manage.ScrollManager(PanelFX1, {Guna2VScrollBar1}, True)
         PanelFX1.Controls.Add(Home)
         PanelFX1.Controls.Add(WallStore)
@@ -61,6 +62,8 @@ Public Class MainUI
         PanelFX1.AutoScroll = True
         PanelFX1.HorizontalScroll.Visible = False
         PanelFX1.VerticalScroll.Visible = True
+
+        Settings.LoadSettingsNoUI()
 
         Return True
     End Function
@@ -185,9 +188,9 @@ This will consume more ram."}
                 Guna2ComboBox1.Items.Clear()
                 Guna2ComboBox1.Visible = False
 
-                UIScrool = New Core.Manage.ScrollManager(PanelFX1, {Guna2VScrollBar1}, True)
+            UIScrool = New Core.Manage.ScrollManager(PanelFX1, {Guna2VScrollBar1}, True)
 
-            ElseIf ButtonSelected Is AboutButton Then
+        ElseIf ButtonSelected Is AboutButton Then
                 About.Visible = True
             About.BringToFront()
             Home.Visible = False
